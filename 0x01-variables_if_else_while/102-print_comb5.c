@@ -18,9 +18,6 @@ int main(void) {
             putchar(x + 48); 
             putchar(y + 48); 
             putchar(' '); 
-            if (j < 10) {
-                putchar('0'); 
-            }
             putchar(j / 10 + 48); 
             putchar(j % 10 + 48); 
             if (i < 99) {
