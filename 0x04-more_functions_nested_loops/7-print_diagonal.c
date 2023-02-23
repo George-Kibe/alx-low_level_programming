@@ -5,6 +5,7 @@
  *
  * @n: the length of the diagonal line to be printed
  */
+
 void print_diagonal(int n)
 {
     if (n <= 0) {

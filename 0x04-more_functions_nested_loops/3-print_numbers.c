@@ -1,4 +1,6 @@
 #include <unistd.h>
+#include "main.h"
+
 /**
  * print_numbers - writes a lsit of input characters
  * @c: the character to print

@@ -5,6 +5,7 @@
  *
  * @n: the length of the line to be printed
  */
+
 void print_line(int n)
 {
     if (n <= 0) {

@@ -5,6 +5,7 @@
  *
  * @size: the size of the square to be printed
  */
+
 void print_square(int size)
 {
     if (size <= 0) {
