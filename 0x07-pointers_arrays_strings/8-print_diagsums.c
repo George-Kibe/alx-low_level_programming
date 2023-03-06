@@ -7,44 +7,36 @@
  *
  * Return: void
  */
-void print_diagsums(int *a, int size)
-{
+void print_diagsums(int *a, int size) {
     int i, j, sum1 = 0, sum2 = 0;
-    
+    char str1[] = "Diagonal sum 1: ";
+    char str2[] = "Diagonal sum 2: ";
+    int len1 = sizeof(str1) - 1;
+    int len2 = sizeof(str2) - 1;
+    int sum1_copy = sum1, sum2_copy = sum2;
+    char buf1[100];
+    char buf2[100];
+
     for (i = 0; i < size; i++) {
-        sum1 += *(a + (i * size) + i);
-        sum2 += *(a + (i * size) + (size - i - 1));
+        sum1 += *(a + i * size + i);
+        sum2 += *(a + i * size + (size - i - 1));
     }
-    
-    /* Print the sums without using printf */
-    char buf[20];
-    int len = 0, n;
-    if (sum1 < 0) {
-        _putchar('-');
-        sum1 = -sum1;
+    while (sum1_copy > 0) {
+        len1++;
+        sum1_copy /= 10;
     }
-    n = sum1;
-    do {
-        buf[len++] = (n % 10) + '0';
-        n /= 10;
-    } while (n > 0);
-    while (len-- > 0) {
-        _putchar(buf[len]);
+    while (sum2_copy > 0) {
+        len2++;
+        sum2_copy /= 10;
     }
-    _putchar(',');
-    _putchar(' ');
-    len = 0;
-    if (sum2 < 0) {
-        _putchar('-');
-        sum2 = -sum2;
+    sprintf(buf1, "%d", sum1);
+    sprintf(buf2, "%d", sum2);
+
+    for (j = 0; j < len1; j++) {
+        putchar(str1[j]);
     }
-    n = sum2;
-    do {
-        buf[len++] = (n % 10) + '0';
-        n /= 10;
-    } while (n > 0);
-    while (len-- > 0) {
-        _putchar(buf[len]);
+    for (j = 0; j < len2; j++) {
+        putchar(str2[j]);
     }
-    _putchar('\n');
+    putchar('\n');
 }
