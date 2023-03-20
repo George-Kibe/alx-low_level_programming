@@ -9,7 +9,6 @@ struct dog {
 };
 
 typedef struct dog dog_t;
-dog_t my_dog = {"Fido", 3.5, "Alice"};
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
